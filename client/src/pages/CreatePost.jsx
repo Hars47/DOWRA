@@ -22,20 +22,20 @@ const CreatePost = () => {
   }
 
   const handleChange = (e) => {
-    setForm({ ...form, [e.target.name]: e.target.value })
+    setForm({ ...form, [e.target.name]: e.target.value });
   }
 
   const handleSurpriseMe = () => {
     const randomPrompt = getRandomPrompt(form.prompt);
     setForm({ ...form, prompt: randomPrompt })
 
-  }
+  };
 
   return (
     <section className="max-w-7xl mx-auto">
       <div>
         <h1 className="font-extrabold text-[#222328] text-[32px]">Create</h1>
-        <p className="mt-2 text-[#666e75] text-[16px] max-w[500px]">Create imaginative and visually stunning images through DOWRA and share them with the community.</p>
+        <p className="mt-2 text-[#666e75] text-[16px] max-w[500px]">Generate imaginative and visually stunning images through DOWRA and share them with the community.</p>
       </div>
 
       <form className='mt-16 max-w-3xl' onSubmit={handleSubmit}>
@@ -45,7 +45,7 @@ const CreatePost = () => {
             labelName="Your name"
             type="text"
             name="name"
-            placeholder="John Doe"
+            placeholder="Ex: Dora the Explorer"
             value={form.name}
             handleChange={handleChange}
           />
@@ -55,7 +55,7 @@ const CreatePost = () => {
             type="text"
             name="prompt"
             placeholder="Spongebob Squarepants in the Blair Witch Project"
-            value={form.name}
+            value={form.prompt}
             handleChange={handleChange}
             isSurpriseMe
             handleSurpriseMe={handleSurpriseMe}
